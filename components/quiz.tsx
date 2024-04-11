@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
 import { questionsByWeek } from "@/components/data/questions";
 
 interface Question {

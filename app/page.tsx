@@ -1,9 +1,9 @@
-import Quiz from "@/components/quiz";
+import AppTitle from "@/components/landing-page";
 
 export default function Home() {
 	return (
 		<>
-			<Quiz />
+			<AppTitle />
 		</>
 	);
 }
