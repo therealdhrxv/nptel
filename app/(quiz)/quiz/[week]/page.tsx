@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 
-import { questionsByWeek } from "@/components/data/questions";
+import ScoreModal from "@/components/score-card-modal";
 import { Question } from "@/types/Question";
+import { questionsByWeek } from "@/components/data/questions";
 
 interface QuizProps {
 	params: {
@@ -27,6 +28,8 @@ const Quiz: React.FC<QuizProps> = ({ params }) => {
 		useState<number>(0);
 	const [score, setScore] = useState<number>(0);
 
+	const [showModal, setShowModal] = useState(false);
+
 	const { week } = params;
 
 	useEffect(() => {
@@ -47,21 +50,18 @@ const Quiz: React.FC<QuizProps> = ({ params }) => {
 		if (currentQuestionIndex < currentQuestions.length - 1) {
 			setCurrentQuestionIndex(currentQuestionIndex + 1);
 		} else {
-			alert(
-				`Quiz completed! Your score is: ${score + 1}/${
-					currentQuestions.length
-				}`
-			);
+			setShowModal(true);
 		}
 	};
 
 	return (
-		<div>
-			<div className="flex-col mt-9 md:mt-2 align-middle space-y-10 lg:space-y-16">
-				<div className="font-bold text-xl p-5">
+		<div className="p-2">
+			{/* <div className="flex-col mt-9 md:mt-2 align-middle space-y-10 lg:space-y-16"> */}
+				<div className="text-2xl md:text-3xl font-semibold p-7 md:p-10">
 					{currentQuestions[currentQuestionIndex]?.question}
 				</div>
-				<div>
+			<div className="grid md:grid-cols-2 gap-3 p-5">
+				{/* <div> */}
 					{currentQuestions[currentQuestionIndex]?.options.map(
 						(option, index) => (
 							<div
@@ -73,8 +73,15 @@ const Quiz: React.FC<QuizProps> = ({ params }) => {
 							</div>
 						)
 					)}
-				</div>
+				{/* </div> */}
 			</div>
+			{showModal && (
+				<ScoreModal
+					score={score}
+					totalQuestions={currentQuestions.length}
+					onClose={() => setShowModal(false)}
+				/>
+			)}
 		</div>
 	);
 };
