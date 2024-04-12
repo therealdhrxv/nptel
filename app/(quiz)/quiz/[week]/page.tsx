@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { Home } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import ScoreModal from "@/components/score-card-modal";
 import { Question } from "@/types/Question";
@@ -20,17 +22,23 @@ const shuffleArray = (array: any[]) => {
 };
 
 const Quiz: React.FC<QuizProps> = ({ params }) => {
-	
 	const [currentQuestions, setCurrentQuestions] = useState<Question[]>(
 		[]
 	);
 	const [currentQuestionIndex, setCurrentQuestionIndex] =
 		useState<number>(0);
 	const [score, setScore] = useState<number>(0);
+	const router = useRouter();
 
 	const [showModal, setShowModal] = useState(false);
 
 	const { week } = params;
+
+	const returnHome = () => {
+		if (typeof window !== "undefined") {
+			router.push("/");
+		}
+	};
 
 	useEffect(() => {
 		const selectedWeek = week;
@@ -56,23 +64,28 @@ const Quiz: React.FC<QuizProps> = ({ params }) => {
 
 	return (
 		<div className="p-2">
-			{/* <div className="flex-col mt-9 md:mt-2 align-middle space-y-10 lg:space-y-16"> */}
-				<div className="text-2xl md:text-3xl font-semibold p-7 md:p-10">
-					{currentQuestions[currentQuestionIndex]?.question}
-				</div>
+			<div className="text-center text-xl font-light"> {`week ${week.slice(4)} assignment`} </div>
+			<div
+				className="cursor-pointer h-10 float-right mr-3 mt-3 md:mt-[10%] md:mr-[5%]"
+				onClick={() => returnHome()}
+			>
+				<Home />
+			</div>
+			<div className="text-2xl md:text-3xl font-semibold p-7 md:p-10">
+				{currentQuestions[currentQuestionIndex]?.question}
+			</div>
 			<div className="grid md:grid-cols-2 gap-3 p-5">
-				{/* <div> */}
-					{currentQuestions[currentQuestionIndex]?.options.map(
-						(option, index) => (
-							<div
-								key={index}
-								onClick={() => handleAnswer(option)}
-								className="cursor-pointer text-center mt-10 lg:mt-16 mx-7 md:mx-16 lg:mx-[25%] rounded-lg border border-gray-300 p-4 hover:bg-gray-100 transition duration-300"
-							>
-								{option}
-							</div>
-						)
-					)}
+				{currentQuestions[currentQuestionIndex]?.options.map(
+					(option, index) => (
+						<div
+							key={index}
+							onClick={() => handleAnswer(option)}
+							className="cursor-pointer text-center mt-10 lg:mt-16 mx-7 md:mx-16 lg:mx-[25%] rounded-lg border border-gray-300 p-4 hover:bg-gray-100 transition duration-300"
+						>
+							{option}
+						</div>
+					)
+				)}
 				{/* </div> */}
 			</div>
 			{showModal && (
