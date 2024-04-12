@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from "react";
 
 import { questionsByWeek } from "@/components/data/questions";
+import { Question } from "@/types/Question";
 
-interface Question {
-	question: string;
-	options: string[];
-	answer: string;
+interface QuizProps {
+	params: {
+		week: string;
+	};
 }
 
 const shuffleArray = (array: any[]) => {
@@ -17,7 +18,8 @@ const shuffleArray = (array: any[]) => {
 	}
 };
 
-const Quiz: React.FC = () => {
+const Quiz: React.FC<QuizProps> = ({ params }) => {
+	
 	const [currentQuestions, setCurrentQuestions] = useState<Question[]>(
 		[]
 	);
@@ -25,13 +27,18 @@ const Quiz: React.FC = () => {
 		useState<number>(0);
 	const [score, setScore] = useState<number>(0);
 
+	const { week } = params;
+
 	useEffect(() => {
-		// Shuffle questions and options
-		const shuffledQuestions = [...questionsByWeek.week1];
-		shuffleArray(shuffledQuestions);
-		shuffledQuestions.forEach((q) => shuffleArray(q.options));
-		setCurrentQuestions(shuffledQuestions);
-	}, []);
+		const selectedWeek = week;
+		const weekQuestions = questionsByWeek[selectedWeek];
+		if (weekQuestions) {
+			const shuffledQuestions = [...weekQuestions];
+			shuffleArray(shuffledQuestions);
+			shuffledQuestions.forEach((q) => shuffleArray(q.options));
+			setCurrentQuestions(shuffledQuestions);
+		}
+	}, [week]);
 
 	const handleAnswer = (option: string) => {
 		if (option === currentQuestions[currentQuestionIndex].answer) {
@@ -45,8 +52,6 @@ const Quiz: React.FC = () => {
 					currentQuestions.length
 				}`
 			);
-			// Reset or navigate to another page
-			alert(`Thank you for using this app`);
 		}
 	};
 
@@ -62,7 +67,7 @@ const Quiz: React.FC = () => {
 							<div
 								key={index}
 								onClick={() => handleAnswer(option)}
-								className="cursor-pointer text-center mt-10 lg:mt-16 mx-7 md:mx-16 lg:mx-[40%] rounded-lg border border-gray-300 p-4 hover:bg-gray-100 transition duration-300"
+								className="cursor-pointer text-center mt-10 lg:mt-16 mx-7 md:mx-16 lg:mx-[25%] rounded-lg border border-gray-300 p-4 hover:bg-gray-100 transition duration-300"
 							>
 								{option}
 							</div>
