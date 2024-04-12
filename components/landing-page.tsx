@@ -5,10 +5,10 @@ const AppTitle: FC = function () {
 		<section className="bg-white mt-[10%]">
 			<div className="mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-12 lg:pt-16">
 				<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl">
-					Get 'S' in your NPTEL course
+					Get &apos;S&apos; in your NPTEL course
 				</h1>
 				<p className="mb-8 text-gray-500 sm:px-16 md:text-lg lg:text-xl xl:px-48">
-					Welcome to "Forests and Their Management" Quiz
+					Welcome to &quot;Forests and Their Management&quot; Quiz
 					Platform. Prepare for your NPTEL FAT with this platform
 					featuring 12 quizzes all the way from weeks 1 to 12.
 				</p>
