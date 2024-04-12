@@ -9,14 +9,13 @@ const AppTitle: FC = function () {
 				</h1>
 				<p className="mb-8 text-gray-500 sm:px-16 md:text-lg lg:text-xl xl:px-48">
 					Welcome to "Forests and Their Management" Quiz
-					Platform. Prepare for your final exam with this
-					platform featuring 12 quizzes all the way from weeks 1
-					to 12.
+					Platform. Prepare for your NPTEL FAT with this platform
+					featuring 12 quizzes all the way from weeks 1 to 12.
 				</p>
-				<div className="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0 lg:mb-16">
+				<div className="flex flex-col lg:mt-[10%] space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
 					<button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
 						<span className="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0">
-							Attempt quiz
+							🚀  Start Practising 🚀
 						</span>
 					</button>
 				</div>

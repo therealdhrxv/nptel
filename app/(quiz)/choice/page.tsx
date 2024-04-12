@@ -17,43 +17,21 @@ const Choose: React.FC = () => {
 
 	return (
 		<>
-			<div>
-				Please select which week would you like to practise -
+			<div className="text-2xl md:text-3xl font-semibold p-7 md:p-20">
+				Please select which week you would like to practice -
 			</div>
-			<div className="flex flex-col space-y-9">
-				<button onClick={() => handleWeekSelection("week1")}>
-					week 1
-				</button>
-				<button onClick={() => handleWeekSelection("week2")}>
-					week 2
-				</button>
-				<button onClick={() => handleWeekSelection("week3")}>
-					week 3
-				</button>
-				<button onClick={() => handleWeekSelection("week4")}>
-					week 4
-				</button>
-				<button onClick={() => handleWeekSelection("week5")}>
-					week 5
-				</button>
-				<button onClick={() => handleWeekSelection("week6")}>
-					week 6
-				</button>
-				<button onClick={() => handleWeekSelection("week7")}>
-					week 7
-				</button>
-				<button onClick={() => handleWeekSelection("week8")}>
-					week 8
-				</button>
-				<button onClick={() => handleWeekSelection("week9")}>
-					week 9
-				</button>
-				<button onClick={() => handleWeekSelection("week10")}>
-					week 10
-				</button>
-				<button onClick={() => handleWeekSelection("week11")}>
-					week 11
-				</button>
+			<div className="grid md:grid-cols-6 gap-8 md:gap-6 lg:gap-8 p-10">
+				{Array.from({ length: 11 }, (_, i) => `week${i + 1}`).map(
+					(week) => (
+						<button
+							key={week}
+							onClick={() => handleWeekSelection(week)}
+							className="bg-slate-500 text-white font-bold md:h-28 md:text-xl py-2 px-4 rounded hover:bg-slate-700 transition duration-150 ease-in-out"
+						>
+							{`week - ${week.slice(4)}`}
+						</button>
+					)
+				)}
 			</div>
 		</>
 	);
