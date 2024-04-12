@@ -22,11 +22,9 @@ const shuffleArray = (array: any[]) => {
 };
 
 const Quiz: React.FC<QuizProps> = ({ params }) => {
-	const [currentQuestions, setCurrentQuestions] = useState<Question[]>(
-		[]
-	);
-	const [currentQuestionIndex, setCurrentQuestionIndex] =
-		useState<number>(0);
+	
+	const [currentQuestions, setCurrentQuestions] = useState<Question[]>([]);
+	const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
 	const [score, setScore] = useState<number>(0);
 	const router = useRouter();
 
@@ -86,7 +84,6 @@ const Quiz: React.FC<QuizProps> = ({ params }) => {
 						</div>
 					)
 				)}
-				{/* </div> */}
 			</div>
 			{showModal && (
 				<ScoreModal
