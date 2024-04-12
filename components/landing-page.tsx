@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { FC } from "react";
 
 const AppTitle: FC = function () {
@@ -6,7 +7,7 @@ const AppTitle: FC = function () {
 			<section className="bg-white mt-[7%]">
 				<div className="mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-12 lg:pt-16">
 					<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl">
-						Get &apos;S&apos; in your NPTEL course
+						Ace your NPTEL course
 					</h1>
 					<p className="mb-8 text-gray-500 sm:px-16 md:text-lg lg:text-xl xl:px-48">
 						Welcome to &quot;Forests and Their Management&quot;
@@ -15,14 +16,28 @@ const AppTitle: FC = function () {
 						weeks 1 to 12.
 					</p>
 					<div className="flex flex-col lg:mt-[10%] mt-[40%] space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
-						<button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-md md:text-xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
-							<span className="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0">
-								🚀 Start Practising 🚀
-							</span>
-						</button>
+						<Link href="/choice">
+							<button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-md md:text-xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+								<span className="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md group-hover:bg-opacity-0">
+									🚀 Start Practising 🚀
+								</span>
+							</button>
+						</Link>
 					</div>
 				</div>
 			</section>
+			<div className="font-mono mt-28 text-center p-10 leading-loose">
+				Please feel free to contribute to this project! Your inputs
+				can make it even better. If you have ideas or improvements,
+				feel free to drop a PR{" "}
+				<a
+					href="https://github.com/therealdhrxv/nptel/"
+					target="_blank"
+				>
+					<u> here.</u>
+				</a>
+				{" "}If this has helped you, please consider starring the repo.
+			</div>
 		</>
 	);
 };
