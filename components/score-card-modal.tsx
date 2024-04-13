@@ -16,7 +16,7 @@ const ScoreModal: React.FC<ScoreModalProps> = ({
 
 	const handleClose = () => {
 		onClose();
-		router.push("/choice");
+		router.push("/");
 	};
 
 	return (
