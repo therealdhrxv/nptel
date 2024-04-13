@@ -4,12 +4,12 @@ import type { FC } from "react";
 const AppTitle: FC = function () {
 	return (
 		<>
-			<section className="bg-white mt-[7%]">
+			<section className="bg-white mt-[6%]">
 				<div className="mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-12 lg:pt-16">
 					<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl">
 						Ace your NPTEL course
 					</h1>
-					<p className="mb-8 text-gray-500 sm:px-16 md:text-lg lg:text-xl xl:px-48">
+					<p className="mb-8 text-gray-500 sm:px-16 md:text-lg lg:text-xl xl:px-48 font-thin">
 						Welcome to &quot;Forests and Their Management&quot;
 						Quiz Platform. Prepare for your NPTEL FAT with this
 						platform featuring 12 quizzes all the way from
@@ -26,17 +26,18 @@ const AppTitle: FC = function () {
 					</div>
 				</div>
 			</section>
-			<div className="font-mono mt-28 text-center p-10 leading-loose">
+			<div className="font-mono mt-14 md:mt-8 text-center p-8 md:p-32 leading-loose text-slate-400">
 				Please feel free to contribute to this project! Your inputs
 				can make it even better. If you have ideas or improvements,
 				feel free to drop a PR{" "}
 				<a
 					href="https://github.com/therealdhrxv/nptel/"
 					target="_blank"
+					className="text-blue-500"
 				>
 					<u> here.</u>
-				</a>
-				{" "}If this has helped you, please consider starring the repo.
+				</a>{" "}
+				If this has helped you, please consider starring the repo.
 			</div>
 		</>
 	);
