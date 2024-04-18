@@ -5,12 +5,18 @@ import { Home } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 import { questionsByWeek } from "@/components/data/questions";
+import { Question } from "@/types/Question";
 
-const shuffleArray = (array: any[]) => {
-	for (let i = array.length - 1; i > 0; i--) {
+const shuffleArray = <T,>(array: T[]): T[] => {
+	let shuffledArray = [...array];
+	for (let i = shuffledArray.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
-		[array[i], array[j]] = [array[j], array[i]];
+		[shuffledArray[i], shuffledArray[j]] = [
+			shuffledArray[j],
+			shuffledArray[i],
+		];
 	}
+	return shuffledArray;
 };
 
 interface QuizProps {
@@ -19,22 +25,29 @@ interface QuizProps {
 	};
 }
 
-const Quiz: React.FC<QuizProps> = ({ params }) => {
-	const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
+	
 	const [score, setScore] = useState<number>(0);
 	const [showScore, setShowScore] = useState<boolean>(false);
 	const [submitted, setSubmitted] = useState<boolean>(false);
+	const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+	const [questions, setQuestions] = useState<Record<string, Question[]>>({});
+
 	const router = useRouter();
 
-	const { week } = params;
+	const { week } = props.params;
 
 	useEffect(() => {
-		const selectedWeek = week;
-		const weekQuestions = questionsByWeek[selectedWeek];
+		const weekQuestions = questionsByWeek[week];
 		if (weekQuestions) {
-			const shuffledQuestions = [...weekQuestions];
-			shuffleArray(shuffledQuestions);
-			shuffledQuestions.forEach((q) => shuffleArray(q.options));
+			const shuffledQuestions = shuffleArray(weekQuestions);
+			shuffledQuestions.forEach((q) => {
+				q.options = shuffleArray(q.options);
+			});
+			setQuestions((prevState) => ({
+				...prevState,
+				[week]: shuffledQuestions,
+			}));
 			setSelectedAnswers(
 				new Array(shuffledQuestions.length).fill("")
 			);
@@ -51,7 +64,7 @@ const Quiz: React.FC<QuizProps> = ({ params }) => {
 
 	const calculateScore = () => {
 		let newScore = 0;
-		questionsByWeek[week].forEach((question, index) => {
+		questions[week].forEach((question, index) => {
 			if (question.answer === selectedAnswers[index]) {
 				newScore++;
 			}
@@ -81,7 +94,7 @@ const Quiz: React.FC<QuizProps> = ({ params }) => {
 			)} Assignment`}</div>
 
 			<div className="p-5 flex flex-col space-y-20">
-				{questionsByWeek[week]?.map((question, index) => (
+				{questions[week]?.map((question, index) => (
 					<div key={index}>
 						<div className="font-semibold">
 							{question.question}
