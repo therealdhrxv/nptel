@@ -1074,5 +1074,86 @@ export const questionsByWeek: { [week: string]: Question[] } = {
 			answer: "all of the above",
 		},
 	],
-	week12: [],
+	week12: [
+		{
+			question:
+				"A tree has dbh of 35 cm. Find its basal area in sq m.",
+			options: [".049", ".096", ".149", ".195"],
+			answer: ".096",
+		},
+		{
+			question:
+				"In a triangle, the angle between base and hypotenuse, θ = 60° and the hypotenuse c = 4 cm. Find the length of the base b.",
+			options: ["0.66", "1", "1.5", "2"],
+			answer: "2",
+		},
+		{
+			question:
+				"“allowing some places and some creatures to exist without significant human interference” is a definition of",
+			options: [
+				"conservation",
+				"preservation",
+				"environmentalism",
+				"all of these",
+			],
+			answer: "preservation",
+		},
+		{
+			question: "In India, the breast height is considered to be",
+			options: ["1.37 m", "1.47 m", "1.57 m", "2.47 m"],
+			answer: "1.37 m",
+		},
+		{
+			question:
+				"The term laterite soil is derived from Latin later which means",
+			options: ["red", "brick", "fertile", "infertile"],
+			answer: "brick",
+		},
+		{
+			question: "Which of these is not a non-use value?",
+			options: [
+				"direct value",
+				"existence value",
+				"altruistic value",
+				"bequest value",
+			],
+			answer: "direct value",
+		},
+		{
+			question:
+				"“Science of relationships between organisms and their environments” is the definition of:",
+			options: [
+				"conservation",
+				"preservation",
+				"environmentalism",
+				"ecology",
+			],
+			answer: "ecology",
+		},
+		{
+			question: "Self ploughing character is seen in",
+			options: [
+				"black cotton soil",
+				"alluvial soil",
+				"saline soil",
+				"red and yellow soil",
+			],
+			answer: "black cotton soil",
+		},
+		{
+			question: "Mechanical action of ocean waves is an example of",
+			options: [
+				"chemical weathering",
+				"physical weathering",
+				"biological weathering",
+				"none of the above",
+			],
+			answer: "physical weathering",
+		},
+		{
+			question: "Lithosere is an example of",
+			options: ["hydrosere", "xerosere", "psammosere", "halosere"],
+			answer: "xerosere",
+		},
+	],
 };

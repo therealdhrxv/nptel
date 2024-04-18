@@ -33,7 +33,7 @@ const Choose: React.FC = () => {
 				</div>
 			</div>
 			<div className="grid md:grid-cols-6 gap-8 md:gap-6 lg:gap-8 p-10">
-				{Array.from({ length: 11 }, (_, i) => `week${i + 1}`).map(
+				{Array.from({ length: 12 }, (_, i) => `week${i + 1}`).map(
 					(week) => (
 						<button
 							key={week}
