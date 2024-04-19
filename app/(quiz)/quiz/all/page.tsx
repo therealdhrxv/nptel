@@ -99,10 +99,14 @@ const AllWeeksQuiz: React.FC = () => {
 								(option, optionIndex) => {
 									const isSelected =
 										selectedAnswers[index] === option;
+									const isCorrect =
+										option === question.answer;
 									const isSubmitted = submitted;
 									const optionClass = `cursor-pointer text-center rounded-lg border p-4 hover:bg-slate-100 transition ${
 										isSubmitted
-											? isSelected
+											? isCorrect
+												? "bg-green-200"
+												: isSelected
 												? "bg-red-200"
 												: ""
 											: isSelected
