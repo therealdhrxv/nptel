@@ -33,9 +33,13 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 	const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
 	const [questions, setQuestions] = useState<Record<string, Question[]>>({});
 
+	
 	const router = useRouter();
-
+	
 	const { week } = props.params;
+	
+	const [submittedStatus, setSubmittedStatus] = useState<boolean[]>(new Array(questions[week]?.length).fill(false));
+
 
 	useEffect(() => {
 		const weekQuestions = questionsByWeek[week];
@@ -55,11 +59,14 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 	}, [week]);
 
 	const handleAnswer = (option: string, index: number) => {
-		if (!submitted) {
 			const newSelectedAnswers = [...selectedAnswers];
-			newSelectedAnswers[index] = option;
-			setSelectedAnswers(newSelectedAnswers);
-		}
+    newSelectedAnswers[index] = option;
+    setSelectedAnswers(newSelectedAnswers);
+
+    // Update the submitted status for the current question only
+    const newSubmittedStatus = [...submittedStatus];
+    newSubmittedStatus[index] = true;
+    setSubmittedStatus(newSubmittedStatus);
 	};
 
 	const calculateScore = () => {
@@ -106,8 +113,8 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 										selectedAnswers[index] === option;
 									const isCorrect =
 										option === question.answer;
-									const isSubmitted = submitted;
-									const optionClass = `cursor-pointer text-center rounded-lg border p-4 hover:bg-slate-100 transition ${
+									const isSubmitted = submittedStatus[index];
+									const optionClass = `cursor-pointer text-center rounded-lg border p-4 hover:bg-slate-100 ${
 										isSubmitted
 											? isCorrect
 												? "bg-green-200"
@@ -154,14 +161,14 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 					</button>
 				</div>
 			)}
-			{showScore && (
+			{/* {showScore && (
 				<div className="md:text-6xl text-3xl font-mono mb-10">
 					<div className="font-semibold">
 						{score === 10 ? "🎉" : ""} Your score is: {score}/
 						{10} {score === 10 ? "🎉" : ""}
 					</div>
 				</div>
-			)}
+			)} */}
 		</div>
 	);
 };
