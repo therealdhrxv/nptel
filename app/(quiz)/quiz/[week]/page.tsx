@@ -28,7 +28,6 @@ interface QuizProps {
 const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 	const [score, setScore] = useState<number>(0);
 	const [showScore, setShowScore] = useState<boolean>(false);
-	// const [submitted, setSubmitted] = useState<boolean>(false);
 	const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
 	const [questions, setQuestions] = useState<Record<string, Question[]>>(
 		{}
@@ -59,28 +58,28 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 		}
 	}, [week]);
 
+	useEffect(() => {
+		if (submittedStatus.every((status) => status)) {
+			const newScore =
+				questions[week]?.reduce((acc, question, index) => {
+					if (question.answer === selectedAnswers[index]) {
+						return acc + 1;
+					}
+					return acc;
+				}, 0) || 0;
+			setScore(newScore);
+			setShowScore(true);
+		}
+	}, [submittedStatus]);
+
 	const handleAnswer = (option: string, index: number) => {
 		const newSelectedAnswers = [...selectedAnswers];
 		newSelectedAnswers[index] = option;
 		setSelectedAnswers(newSelectedAnswers);
-
-		// Update the submitted status for the current question only
 		const newSubmittedStatus = [...submittedStatus];
 		newSubmittedStatus[index] = true;
 		setSubmittedStatus(newSubmittedStatus);
 	};
-
-	// const calculateScore = () => {
-	// 	let newScore = 0;
-	// 	questions[week].forEach((question, index) => {
-	// 		if (question.answer === selectedAnswers[index]) {
-	// 			newScore++;
-	// 		}
-	// 	});
-	// 	setScore(newScore);
-	// 	setShowScore(true);
-	// 	setSubmitted(true);
-	// };
 
 	const returnHome = () => {
 		if (typeof window !== "undefined") {
@@ -149,25 +148,6 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 					</div>
 				))}
 			</div>
-			{/* {!submitted ? (
-				<div className="text-center mb-10">
-					<button
-						className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded mt-5"
-						onClick={calculateScore}
-					>
-						Submit
-					</button>
-				</div>
-			) : (
-				<div className="text-center mb-10">
-					<button
-						className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded mt-5"
-						onClick={returnHome}
-					>
-						Done
-					</button>
-				</div>
-			)} */}
 			{showScore && (
 				<div className="md:text-6xl text-3xl font-mono mb-10">
 					<div className="font-semibold">
