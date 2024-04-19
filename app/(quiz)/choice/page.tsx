@@ -16,6 +16,12 @@ const Choose: React.FC = () => {
 		}
 	};
 
+	const handleAllWeeksSelection = () => {
+		if (typeof window !== "undefined") {
+			router.push(`/quiz/all`);
+		}
+	};
+
 	const returnHome = () => {
 		if (typeof window !== "undefined") {
 			router.push("/");
@@ -44,6 +50,12 @@ const Choose: React.FC = () => {
 						</button>
 					)
 				)}
+				<button
+					onClick={handleAllWeeksSelection}
+					className="bg-slate-500 text-white font-bold md:h-28 md:text-xl py-2 px-4 rounded hover:bg-slate-700 transition duration-150 ease-in-out"
+				>
+					All Weeks
+				</button>
 			</div>
 		</>
 	);
