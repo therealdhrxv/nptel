@@ -871,8 +871,8 @@ export const questionsByWeek: { [week: string]: Question[] } = {
 		},
 		{
 			question: "Net growth in initial volume is given by",
-			options: ["V2-V1", "V2-V1+H-I", "V2-V1+H-I+M", "V2-V1+H-I-M"],
-			answer: "V2-V1+H-I",
+			options: ["V2 - V1", "V2 - V1 + H + I", "V2 - V1 + H - I + M", "V2 -V1 + H - I - M"],
+			answer: "V2 - V1 + H + I",
 		},
 	],
 	week10: [
