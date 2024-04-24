@@ -80,6 +80,13 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 		}
 	};
 
+	const returnweek=()=>{
+		if (typeof window !== "undefined") {
+			router.push("/choice");
+		}
+
+	}
+
 	return (
 		<div className="p-2">
 			<div
@@ -148,7 +155,7 @@ const Quiz: React.FC<QuizProps> = (props: QuizProps) => {
 				<div className="text-center mb-10">
 					<button
 						className="bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded mt-5"
-						onClick={returnHome}
+						onClick={returnweek}
 					>
 						Done
 					</button>
