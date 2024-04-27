@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Home } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -28,7 +28,7 @@ const AllWeeksQuiz: React.FC = () => {
 
 	const router = useRouter();
 
-	useEffect(() => {
+	const fetchQuestions = () => {
 		let allQuestions: Question[] = [];
 		Object.entries(questionsByWeek).forEach(
 			([week, weekQuestions]) => {
@@ -47,6 +47,10 @@ const AllWeeksQuiz: React.FC = () => {
 				new Array(shuffledQuestions.length).fill("")
 			);
 		}
+	};
+
+	React.useEffect(() => {
+		fetchQuestions();
 	}, []);
 
 	const handleAnswer = (option: string, index: number) => {
