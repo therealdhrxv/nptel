@@ -5,7 +5,7 @@ const AppTitle: FC = function () {
 	return (
 		<>
 			<section className="bg-white mt-[6%]">
-				<div className="mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-12 lg:pt-16">
+				<div className="mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-12 lg:pt-10">
 					<h1
 						className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-7xl
 					bg-[length:300%_300%] 
