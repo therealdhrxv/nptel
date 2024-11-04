@@ -428,7 +428,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "seamount",
                 "atoll"
             ],
-            answer: "oceanic deep / trench"
+            answer: "atoll"
         },
         {
             question: "“Deep valleys, often cutting across continental shelves and slopes” is a description of",
@@ -468,7 +468,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "seamount",
                 "atoll"
             ],
-            answer: "mid-oceanic ridge"
+            answer: "oceanic deep / trench"
         },
         {
             question: "Equal temperature curves are called",
