@@ -304,7 +304,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "talc, fluorite, apatite, diamond",
                 "diamond, feldspar, calcite, talc"
             ],
-            answer: "talc, fluorite, apatite, diamond"
+            answer: "talc, calcite, feldspar, diamond"
         }
     ],
 	week4: [
