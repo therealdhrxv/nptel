@@ -488,7 +488,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "Coriolis force",
                 "arrangement of coasts"
             ],
-            answer: "phase separation"
+            answer: "arrangement of coasts"
         },
         {
             question: "“Relatively steep-sided, narrow, deep basins” is a description of",
