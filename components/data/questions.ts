@@ -622,7 +622,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "gamma (γ) biodiversity",
                 "delta (δ) biodiversity"
             ],
-            answer: "beta (β) biodiversity"
+            answer:    "gamma (γ) biodiversity"
         },
         {
             question: "Thermal stresses lead to",
@@ -652,7 +652,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "disclimax",
                 "catastrophic climax"
             ],
-            answer: "disclimax"
+            answer:    "catastrophic climax"
         },
         {
             question: "Khadar is a type of",
