@@ -550,7 +550,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "a",
                 "b"
             ],
-            answer: "a"
+            answer: "b"
         },
         {
             question: "In Koeppen classification, which is hot summer temperature?",
@@ -560,7 +560,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "a",
                 "b"
             ],
-            answer: "h"
+            answer: "a"
         },
         {
             question: "In Koeppen classification, which is cool summer temperature?",
@@ -570,7 +570,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "F",
                 "T"
             ],
-            answer: "d"
+            answer: "c"
         },
         {
             question: "In Koeppen classification, which is summer dry precipitation?",
