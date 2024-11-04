@@ -428,7 +428,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "seamount",
                 "atoll"
             ],
-            answer: "atoll"
+            answer: "oceanic deep / trench"
         },
         {
             question: "“Deep valleys, often cutting across continental shelves and slopes” is a description of",
