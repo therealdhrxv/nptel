@@ -1050,7 +1050,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "transport town",
                 "commercial town"
             ],
-            answer: "industrial town"
+            answer:"transport town"
         },
         {
             question: "Varanasi can best be categorized as",
@@ -1202,7 +1202,7 @@ export const questionsByWeek: { [week: string]: Question[] } = {
                 "travel cost method",
                 "contingent valuation method"
             ],
-            answer: "contingent valuation method"
+            answer:   "replacement cost method"
         },
         {
             question: "The time of flight for LiDAR is 0.00001 sec. Find the distance of the object from the instrument.",
