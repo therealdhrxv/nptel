@@ -19,7 +19,7 @@ const AppTitle: FC = function () {
 						Ace your NPTEL course
 					</h1>
 					<p className="mb-8 text-gray-500 sm:px-16 md:text-lg lg:text-xl xl:px-48 font-thin">
-						Welcome to &quot;Forests and Their Management&quot;
+						Welcome to &quot; Forests and Their Management &quot;
 						Quiz Platform. Prepare for your NPTEL FAT with this
 						platform featuring 12 quizzes all the way from
 						weeks 1 to 12.
