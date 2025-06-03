@@ -1,4 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Title
+
+A brief description of the project.
+
+## Description
+
+[Detailed description of the project, its purpose, and what it does.]
+
+## Features
+
+- Score tracking
+
+## Tech Stack
+
+[List the technologies, frameworks, and libraries used in the project. e.g., Next.js, React, TypeScript, Tailwind CSS]
 
 ## Getting Started
 
@@ -20,17 +34,38 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+In the project directory, you can run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `npm run dev` or `yarn dev` or `pnpm dev` or `bun dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Deploy on Vercel
+The page will reload if you make edits.
+You will also see any lint errors in the console.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### `npm run build` or `yarn build` or `pnpm build` or `bun build`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Builds the app for production to the `.next` folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
+### `npm run start` or `yarn start` or `pnpm start` or `bun start`
+
+Runs the production build of the app.
+
+### `npm run lint` or `yarn lint` or `pnpm lint` or `bun lint`
+
+Lints the project files using ESLint.
+
+## Contributing
+
+[Information on how to contribute to the project. This could include guidelines for reporting bugs, submitting feature requests, or making code contributions. e.g., "Contributions are welcome! Please open an issue or submit a pull request." ]
+
+## License
+
+This project does not currently have a license. Consider adding a standard license like MIT.
